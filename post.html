@@ -6,10 +6,10 @@
 <script>
 $(document).ready(function(){
   $("button").click(function(){
-    $.post("http://localhost:3000/users",
+    $.post("http://localhost:3000/createuser",
     {
-      "user[name]":"Stallion2 11",
-      "user[email]":"TierDelta2@gmail.com",
+      "user[name]":"Stallion22 11",
+      "user[email]":"TierDelta22@gmail.com",
       "user[password]":"123456",
       "user[password_confirmation]":"123456",
       "commit":"Create+my+account",
@@ -17,6 +17,7 @@ $(document).ready(function(){
     function(data,status){
       alert("Data: " + data + "\nStatus: " + status);
     });
+    // alert(xmlHttp.responseText);
   });
 });
 </script>

@@ -6,18 +6,23 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-  # localhost:3000/createuser URL to send ajax to
+
+
+  # localhost:3000/createuser URL to send ajax to  
   def create
     @user = User.new(user_params)
     if @user.save
+      sign_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
       # render plain: "OK"
     else
       render 'new'
       # render plain: "FAILED"
+
     end
   end
+
 
   private
 
